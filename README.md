@@ -1,13 +1,19 @@
 # GIMM-110-AR-Game
 
 ## Concepts:
--
--
--
+- 'Keep Talking and Nobody Explodes' 
+- 6 Sided cube with QR codes that expand to 'see' into
+- 3 Player Game: Cube User, Task User, Instructions User
+- Rotates Positions through the game (potentially optional)
+- 
+
+### Alternative/Additionals:
+- 
+
 
 ## Milestones:
 - Art Assets
-- Base Game Coding
+- Base Game Coding 
 - State Machine Coding
 - AR Coding
 - Total Integration
