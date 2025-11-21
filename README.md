@@ -31,12 +31,12 @@
 # Individual Tasks:
 
 ### Grayson -
--
+- 
 -
 -
 
 ### Devin -
--
+- Started Animation
 -
 -
 
@@ -46,7 +46,7 @@
 -
 
 ### Brandon -
--
+- In Game Timer
 -
 -
 
