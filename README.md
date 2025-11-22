@@ -8,7 +8,7 @@
 - Rotates Positions through the game (potentially optional)
 
 #### Game Concepts:
-- 3-4 Games Total, 2-3 Manuals
+- 2-3 Games Total, 1 Manual
 - Ground Control
 - Fuse Replacement
 - Intercom/Communications
