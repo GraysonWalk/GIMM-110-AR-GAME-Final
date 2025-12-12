@@ -83,6 +83,7 @@ Bar to destruction, prompts them to show repair card throughout the whole game, 
 - Base State Machine
 - Crew Identifier
 - AR Integration
+- Videography
 
 ### Brandon -
 - In Game Timer
