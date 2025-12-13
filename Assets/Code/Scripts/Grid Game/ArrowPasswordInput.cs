@@ -11,6 +11,7 @@ public class ArrowPasswordInput : MonoBehaviour
 
     private int index = 0;
 
+    // Initializes password sequence 
     public void StartSequence(ArrowPassword pw, GridNodeDirectional baseNode)
     {
         node = baseNode;
@@ -21,8 +22,12 @@ public class ArrowPasswordInput : MonoBehaviour
 
     void Update()
     {
+        // Password Input
+
+        // For interaction, if node doesn't contain a password return
         if (password == null) return;
 
+        // Password Inputs (uses Enum)
         if (Input.GetKeyDown(KeyCode.W)) 
             CheckInput(ArrowDir.Up);
         if (Input.GetKeyDown(KeyCode.S)) 
@@ -31,16 +36,22 @@ public class ArrowPasswordInput : MonoBehaviour
             CheckInput(ArrowDir.Left);
         if (Input.GetKeyDown(KeyCode.D)) 
             CheckInput(ArrowDir.Right);
+
+        // Deactivates password gameobject
         if (Input.GetKeyDown(KeyCode.Escape))
             gameObject.SetActive(false);
 
     }
+
+    // Password Logic
     private void CheckInput(ArrowDir dir)
     {
+        // If input = password element at index, progress
         if (dir == password.sequence[index])
         {
             index++;
 
+            // If index reaches end of password, set correct
             if (index >= password.sequence.Length)
             {
                 Debug.Log("correct");
@@ -51,6 +62,8 @@ public class ArrowPasswordInput : MonoBehaviour
                 password = null;
             }
         }
+
+        // If input != password element at index, reset progress/index
         else
         {
             Debug.Log("incorrect");
