@@ -1,11 +1,14 @@
 # GIMM-110-AR-Game
 
+
 ## Concepts:
 - 'Keep Talking and Nobody Explodes' 
 - 6 Sided cube with QR codes that expand to 'see' into
-- *NEW Control Panel format instead of the Cube
+- <strong>*NEW Control Panel format instead of the Cube</strong>
 - 3 Player Game: Cube User, Task User, Instructions User
+- <strong>2 Player Game: Control Box/Manual User and Console User</strong>
 - Rotates Positions through the game (potentially optional)
+
 
 #### Game Concepts:
 - 2-3 Games Total, 1 Manual
@@ -14,11 +17,14 @@
 - Intercom/Communications
 - Crew Identifier
 - Line Game
+##### Chosen:
+- *Hacking Game
+- *Box Matcher
+- *Crew Identifier
 
-Repair Hyper Drive:
 
-Radar:
-scanning qr codes that pop up on radar that then accomplish something - maybe click certain objects vs others and qr code on the side tells you which
+Box Matcher:
+player would need to flip switches in pattern that is displayed in the manual and needed to be shown to fix eletrical managment system.
 
 
 Hacking:
@@ -66,23 +72,24 @@ Bar to destruction, prompts them to show repair card throughout the whole game, 
 ### Grayson -
 - Organization
 - Hacking Minigame
--
+- Portfolio Artifact
 
 ### Devin -
 - Started Animation
--
--
+- Game State Manager
+- UI Graphics
 
 ### Alex -
 - Base State Machine
 - Crew Identifier
--
+- AR Integration
+- Videography
 
 ### Brandon -
 - In Game Timer
 - Narrative Design/Word Doc
 - Physical Props
--
+- Fuse Game
 
 
 # License
