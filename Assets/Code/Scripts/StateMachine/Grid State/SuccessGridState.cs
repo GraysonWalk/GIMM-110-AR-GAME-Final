@@ -17,6 +17,7 @@ public class SuccessGridState : IState
 
     public void Update()
     {
+        // Quits game instance on any input
         if (Input.anyKeyDown)
         {
             Debug.Log("Success confirmed");
