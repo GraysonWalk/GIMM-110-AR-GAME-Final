@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b5d86400074efb88a725e0d1281ced, type: 3}
   m_Name: GameConfiguration
   m_EditorClassIdentifier: Assembly-CSharp::GameConfiguration
-  configurationName: Configuration One
+  configurationName: 001
   videoClip: {fileID: 32900000, guid: f41ce81cf24f648ccabfcc98ed2e7878, type: 3}
   objectStates:
   - targetId: ControlPanelTarget
