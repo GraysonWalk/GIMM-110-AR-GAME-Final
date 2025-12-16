@@ -4,7 +4,6 @@ public class SwapBehavior : MonoBehaviour
 {
     [SerializeField] GameObject[] Index1;
     [SerializeField] GameObject[] Index2;
-    [SerializeField] GameObject[] Index3;
     private float masterIndex = 0;
 
     void Start()
@@ -18,7 +17,7 @@ public class SwapBehavior : MonoBehaviour
     public void Swap()
     {
         masterIndex++;
-        if (masterIndex >= 3)
+        if (masterIndex >= 2)
         {
             masterIndex = 0;
         }
@@ -29,7 +28,7 @@ public class SwapBehavior : MonoBehaviour
                 {
                     elem.SetActive(true);
                 }
-                foreach (GameObject elem in Index3)
+                foreach (GameObject elem in Index2)
                 {
                     elem.SetActive(false);
                 }
@@ -46,21 +45,6 @@ public class SwapBehavior : MonoBehaviour
                 }
                 break;
 
-            case 2:
-                foreach (GameObject elem in Index3)
-                {
-                    elem.SetActive(true);
-                }
-                foreach (GameObject elem in Index2)
-                {
-                    elem.SetActive(false);
-                }
-                break;
         }
-    }
-
-    public void SpecificSwap()
-    {
-
     }
 }

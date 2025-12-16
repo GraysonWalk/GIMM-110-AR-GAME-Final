@@ -1,11 +1,11 @@
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class InteractGridState : IState
 {
     private readonly GridStateMachine machine;
     private ArrowPasswordInput passwordUI;
+    private bool firstPass;
     [SerializeField] private GameObject node;
 
 
@@ -18,10 +18,17 @@ public class InteractGridState : IState
     public void OnEnter()
     {
         Debug.Log("Entered Interact State");
+        firstPass = machine.GetPassBool();
+        if (firstPass)
+        {
+            passwordUI = machine.GetUI();
+            machine.firstPass = false;
+        } else
+        {
+            passwordUI = machine.GetUI2();
+        }
 
-        passwordUI = machine.GetUI();
-
-        ArrowPassword pw = machine.GetNode().GetComponent<ArrowPassword>();
+            ArrowPassword pw = machine.GetNode().GetComponent<ArrowPassword>();
 
         SelectionBehavior sb = machine.GetNode().GetComponent<SelectionBehavior>();
 

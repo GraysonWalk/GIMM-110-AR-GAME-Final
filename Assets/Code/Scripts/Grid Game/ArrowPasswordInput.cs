@@ -8,6 +8,7 @@ public class ArrowPasswordInput : MonoBehaviour
     private ArrowPassword password;
     public UnityEvent onCorrect;
     public UnityEvent onIncorrect;
+    [SerializeField] GameObject[] passImages;
 
     private int index = 0;
 
@@ -18,6 +19,7 @@ public class ArrowPasswordInput : MonoBehaviour
         password = pw;
         index = 0;
         gameObject.SetActive(true);
+        passImages[index].gameObject.SetActive(true);
     }
 
     void Update()
@@ -50,12 +52,20 @@ public class ArrowPasswordInput : MonoBehaviour
         if (dir == password.sequence[index])
         {
             index++;
+            passImages[index].gameObject.SetActive(true);
+            passImages[index -1].gameObject.SetActive(false);
+
 
             // If index reaches end of password, set correct
             if (index >= password.sequence.Length)
             {
                 Debug.Log("correct");
+                for (int i = 0; i < passImages.Length; i++)
+                {
+                    passImages[i].gameObject.SetActive(false);
+                }
                 onCorrect.Invoke();
+
 
                 gameObject.SetActive(false);
                 node.onActivate.Invoke();
@@ -68,6 +78,13 @@ public class ArrowPasswordInput : MonoBehaviour
         {
             Debug.Log("incorrect");
             index = 0;
+            for (int i = 1; i < passImages.Length; i++)
+            {
+                passImages[i].gameObject.SetActive(false);
+            }
+            passImages[index].gameObject.SetActive(true);
+            
+
             onIncorrect.Invoke();
         }
     }
