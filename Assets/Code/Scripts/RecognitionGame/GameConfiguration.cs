@@ -12,7 +12,9 @@ public class GameConfiguration : ScriptableObject
 {
     public string configurationName;
     public VideoClip videoClip; // Optional video clip for hologram playback games
+    public string password; // Optional password for password input games
     public List<ObjectState> objectStates = new(); // List of expected object states for image targets
+
 
     /// <summary>
     ///     Represents the expected state of an AR target in the game configuration. Currently just
@@ -38,10 +40,7 @@ public class GameConfiguration : ScriptableObject
                 return false;
             }
 
-            if (requireActive && !targetComponent.IsActive)
-            {
-                return false;
-            }
+            if (requireActive && !targetComponent.IsActive) return false;
 
             if (targetId == ARTargetList.None) return false;
             return targetComponent.target == targetId;

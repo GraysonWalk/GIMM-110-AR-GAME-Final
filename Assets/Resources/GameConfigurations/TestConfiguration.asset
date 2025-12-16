@@ -14,18 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameConfiguration
   configurationName: 001
   videoClip: {fileID: 32900000, guid: f41ce81cf24f648ccabfcc98ed2e7878, type: 3}
+  password: dingDang
   objectStates:
-  - targetId: Fuse
+  - targetId: 1
     requireActive: 1
-  - targetId: RedAlert
+  - targetId: 3
     requireActive: 1
-  - targetId: SystemsNormal
-    requireActive: 1
-  - targetId: Concentrated
-    requireActive: 1
-  - targetId: Dispersed
-    requireActive: 1
-  - targetId: Nuclear
-    requireActive: 1
-  - targetId: Antimatter
+  - targetId: 5
     requireActive: 1

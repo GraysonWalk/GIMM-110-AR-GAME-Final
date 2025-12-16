@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,11 +8,19 @@ using UnityEngine.UI;
 public class RecGamePasswordInput : PasswordInputBase
 {
     [SerializeField] private Outline outline;
+    [SerializeField] private TMP_InputField inputField;
 
     private void Awake()
     {
+        inputField = GetComponent<TMP_InputField>();
         if (outline == null)
             outline = GetComponent<Outline>();
+    }
+
+    public void Start()
+    {
+        inputField.Select();
+        inputField.ActivateInputField();
     }
 
     public override void CheckInput(string input)
@@ -21,12 +30,12 @@ public class RecGamePasswordInput : PasswordInputBase
         if (input == password)
         {
             Debug.Log("Password correct");
-            if (outline != null) outline.effectColor = Color.green;
+            if (outline != null) outline.effectColor = Color.paleGreen;
         }
         else
         {
             Debug.Log("Password incorrect");
-            if (outline != null) outline.effectColor = Color.red;
+            if (outline != null) outline.effectColor = Color.indianRed;
         }
     }
 }

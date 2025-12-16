@@ -16,6 +16,10 @@ public class RecognitionGameManager : MonoBehaviour
     [SerializeField] private MatchChecker matchChecker;
     [SerializeField] private GameObject systemsHolder;
 
+    [SerializeField]
+    private PasswordInputBase passwordInput; // Optional password input component for password-based games
+
+
     private GameConfiguration _activeConfig; // Currently active game configuration
 
     private void Awake()
@@ -51,6 +55,20 @@ public class RecognitionGameManager : MonoBehaviour
             matchChecker = GetComponent<MatchChecker>();
             if (matchChecker == null) Debug.LogError("MatchChecker component is missing.");
         }
+
+        if (passwordInput != null && !string.IsNullOrEmpty(_activeConfig.password))
+        {
+            passwordInput.SetPassword(_activeConfig.password);
+            passwordInput.OnCorrect += OnCorrectPassword;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        foreach (var target in systemsHolder.GetComponentsInChildren<ARTarget>())
+            target.OnActivated -= HandleTargetFound;
+
+        if (passwordInput != null) passwordInput.OnCorrect -= OnCorrectPassword;
     }
 
     private void HandleTargetFound(ARTarget target)
@@ -58,6 +76,11 @@ public class RecognitionGameManager : MonoBehaviour
         var puzzleSolved = matchChecker.CheckMatches(_activeConfig, target);
 
         if (puzzleSolved) OnPuzzleSolved();
+    }
+
+    private void OnCorrectPassword()
+    {
+        Debug.Log("Correct password entered!");
     }
 
     /// <summary>

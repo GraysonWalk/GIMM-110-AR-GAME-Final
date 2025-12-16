@@ -5,4 +5,5 @@ public interface IPasswordInput
     event Action OnCorrect;
     event Action OnIncorrect;
     void CheckInput(string input);
+    void SetPassword(string newPassword);
 }

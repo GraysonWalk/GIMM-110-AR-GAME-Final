@@ -33,4 +33,9 @@ public abstract class PasswordInputBase : MonoBehaviour, IPasswordInput
             onIncorrect?.Invoke();
         }
     }
+
+    public void SetPassword(string newPassword)
+    {
+        password = newPassword;
+    }
 }
