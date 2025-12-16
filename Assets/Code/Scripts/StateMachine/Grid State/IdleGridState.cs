@@ -1,9 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class IdleGridState : IState
 {
     private readonly GridStateMachine machine;
-
+    private Animator anim;
     public IdleGridState(GridStateMachine machine)
     {
         this.machine = machine;
@@ -12,6 +13,7 @@ public class IdleGridState : IState
     public void OnEnter()
     {
         Debug.Log("Entered Idle State");
+        anim = machine.GetAnim();
     }
 
     public void Update()
@@ -24,16 +26,28 @@ public class IdleGridState : IState
 
         // Up
         if (Input.GetKeyDown(KeyCode.W))
+        {
+            anim.SetTrigger("Move");
             TryMove(node.up);
+        }
         // Down
         if (Input.GetKeyDown(KeyCode.S))
+        {
+            anim.SetTrigger("Move");
             TryMove(node.down);
+        }
         // Left
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A)) 
+        {
+            anim.SetTrigger("Move");
             TryMove(node.left);
+        }
         // Right
         if (Input.GetKeyDown(KeyCode.D))
+        {
+            anim.SetTrigger("Move");
             TryMove(node.right);
+        }
         // Interact
             // Checks node canInteract is active and E input
         if (Input.GetKeyDown(KeyCode.E) && node.canInteract)
@@ -67,4 +81,5 @@ public class IdleGridState : IState
         Debug.Log("Exited Idle State");
         //
     }
+
 }
