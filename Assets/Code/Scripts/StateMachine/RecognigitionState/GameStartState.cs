@@ -1,11 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class GameStartState : RecognitionBaseState
 {
-    [SerializeField] private GameObject _systems;
+    private RecognitionGameManager gameManager;
+    private GameObject _systems;
     private readonly List<ARTarget> _targets = new List<ARTarget>();
     private readonly List<ARTarget> _activatedTargets = new List<ARTarget>();
+    public GameStartState(RecognitionGameManager gamemanager, GameObject  systems) 
+    {  
+        this.gameManager = gamemanager;
+        _systems = systems; 
+    
+    }
     
     public override void OnEnter()
     {
@@ -19,7 +27,14 @@ public class GameStartState : RecognitionBaseState
 
     private void OnTargetActivated(ARTarget target)
     {
-        if
-        _activatedTargets.Add(target);
+        if (_activatedTargets.Count >= 3)
+        {
+            gameManager.StateMachine.ChangeState(PlayState);
+        }
+        else
+        {
+            _activatedTargets.Add(target);
+        }
+            
     }
 }
