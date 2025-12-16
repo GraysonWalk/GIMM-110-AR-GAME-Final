@@ -10,10 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35b5d86400074efb88a725e0d1281ced, type: 3}
-  m_Name: GameConfiguration
+  m_Name: TestConfiguration
   m_EditorClassIdentifier: Assembly-CSharp::GameConfiguration
   configurationName: 001
   videoClip: {fileID: 32900000, guid: f41ce81cf24f648ccabfcc98ed2e7878, type: 3}
   objectStates:
-  - targetId: ControlPanelTarget
+  - targetId: Fuse
+    requireActive: 1
+  - targetId: RedAlert
+    requireActive: 1
+  - targetId: SystemsNormal
+    requireActive: 1
+  - targetId: Concentrated
+    requireActive: 1
+  - targetId: Dispersed
+    requireActive: 1
+  - targetId: Nuclear
+    requireActive: 1
+  - targetId: Antimatter
     requireActive: 1

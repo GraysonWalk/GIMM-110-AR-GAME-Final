@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
-    <ImageTarget name="testsymbol" size="1.000000 1.225275" />
+    <ImageTarget name="antimatter" size="1.000000 1.243349" />
+    <ImageTarget name="fuse" size="1.000000 1.470455" />
+    <ImageTarget name="systemsnormal" size="1.000000 1.166600" />
+    <ImageTarget name="redalert" size="1.000000 1.431159" />
+    <ImageTarget name="nuclear" size="1.000000 1.125791" />
+    <ImageTarget name="dispersedpower" size="1.000000 1.083393" />
+    <ImageTarget name="concentratedpower" size="1.000000 1.241935" />
+    <ImageTarget name="magnatetest" size="1.000000 0.983484" />
+    <ImageTarget name="foundertest" size="1.000000 0.976202" />
+    <ImageTarget name="stewardtest" size="1.000000 0.997429" />
   </Tracking>
 </QCARConfig>

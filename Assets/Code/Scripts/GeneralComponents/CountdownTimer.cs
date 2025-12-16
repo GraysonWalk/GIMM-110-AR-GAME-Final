@@ -5,7 +5,7 @@ public class CountdownTimer : MonoBehaviour
     // Event triggered when the timer finishes
     public delegate void TimerFinishedHandler();
 
-    public float TotalTime = 10f; // Total time for the countdown in seconds
+    public float totalTime = 10f; // Total time for the countdown in seconds
     private bool _isRunning;
     private float _remainingTime;
 
@@ -45,7 +45,7 @@ public class CountdownTimer : MonoBehaviour
     // Resets the timer to the total time
     public void ResetTimer()
     {
-        _remainingTime = TotalTime;
+        _remainingTime = totalTime;
         _isRunning = false;
     }
 
