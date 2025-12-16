@@ -14,8 +14,15 @@ public class RecognitionGameManager : MonoBehaviour
     public VideoPlayer videoPlayer; // Optional VideoPlayer to play solution video in games that utilize them
 
     [SerializeField] private MatchChecker matchChecker;
+    [SerializeField] private GameObject systemsHolder;
 
     private GameConfiguration _activeConfig; // Currently active game configuration
+
+    private void Awake()
+    {
+        foreach (var target in systemsHolder.GetComponentsInChildren<ARTarget>())
+            target.OnActivated += HandleTargetFound;
+    }
 
     private void Start()
     {

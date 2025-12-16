@@ -1,8 +1,13 @@
-using System.Collections.Generic;
-using UnityEngine;
-
-[CreateAssetMenu(menuName = "AR/ARTargetList")]
-public class ARTargetList : ScriptableObject
+public enum ARTargetList
 {
-    public List<ARTarget> Targets = new();
+    None,
+    Nuclear,
+    Antimatter,
+    Concentrated,
+    Dispersed,
+    SystemsNormal,
+    RedAlert,
+    RebootKey,
+    Fuse,
+    ManualOverride
 }

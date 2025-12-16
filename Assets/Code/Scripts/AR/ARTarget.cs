@@ -6,9 +6,7 @@ public class ARTarget : DefaultObserverEventHandler
     [SerializeField]
     private bool isActive;
 
-    [SerializeField] private ARTargetList _arTargetList;
-
-    [SerializeField] private int selectedTargetIndex = -1;
+    public ARTargetList target;
 
     public bool IsActive
     {
@@ -16,14 +14,9 @@ public class ARTarget : DefaultObserverEventHandler
         set => SetActive(value);
     }
 
-    public ARTarget SelectedFromList
+    public void Awake()
     {
-        get
-        {
-            if (_arTargetList == null || selectedTargetIndex < 0 || selectedTargetIndex >= _arTargetList.Targets.Count)
-                return null;
-            return _arTargetList.Targets[selectedTargetIndex];
-        }
+        if (target == ARTargetList.None) Debug.LogWarning($"ARTarget on {gameObject.name} has no target assigned.");
     }
 
     public event Action<ARTarget> OnActivated;
