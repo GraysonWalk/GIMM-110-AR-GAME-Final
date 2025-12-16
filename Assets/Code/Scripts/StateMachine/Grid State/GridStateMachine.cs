@@ -9,9 +9,17 @@ public class GridStateMachine : MonoBehaviour
 
     [SerializeField] private ArrowPasswordInput PasswordUI;
 
+    [SerializeField] private ArrowPasswordInput PasswordUI2;
+
+
     [SerializeField] private GameObject GameInstance;
 
+    [SerializeField] private GameObject manager;
+
     [SerializeField] private Animator anim;
+
+    public bool firstPass = true;
+
 
 
     private IState currentState;
@@ -50,9 +58,13 @@ public class GridStateMachine : MonoBehaviour
     public GridNodeDirectional GetNode() => currentNode;
     public GridNodeDirectional GetStartNode() => startNode;
     public ArrowPasswordInput GetUI() => PasswordUI;
+    public ArrowPasswordInput GetUI2() => PasswordUI2;
     public GameObject GetGame() => GameInstance;
+    public GameObject GetManager() => manager;
     public Animator GetAnim() => anim;
-    
+    public bool GetPassBool() => firstPass;
+
+
     public void SetNode(GridNodeDirectional node)
     {
         currentNode = node;

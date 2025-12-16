@@ -4,10 +4,12 @@ public class SuccessGridState : IState
 {
     private readonly GridStateMachine machine;
     GameObject GameInstance;
+    GameObject manager;
     public SuccessGridState(GridStateMachine machine)
     {
         this.machine = machine;
         GameInstance = machine.GetGame();
+        manager = machine.GetManager();
     }
 
     public void OnEnter()
@@ -32,6 +34,7 @@ public class SuccessGridState : IState
 
     public void OnExit() 
     {
+        //manager.game1Complete = false;
         GameInstance.SetActive(false);
     }
 }
