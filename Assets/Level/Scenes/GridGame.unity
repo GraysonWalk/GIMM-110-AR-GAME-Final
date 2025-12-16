@@ -2752,7 +2752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &235836641
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3282,7 +3282,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetBehaviour
---- !u!114 &277937443
+--- !u!114 &277937444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8549,7 +8549,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7805252006469078502, guid: 1256767cf59bf4084903521518d4f868, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1213788513}
+      addedObject: {fileID: 1213788514}
   m_SourcePrefab: {fileID: 100100000, guid: 1256767cf59bf4084903521518d4f868, type: 3}
 --- !u!4 &757421161 stripped
 Transform:
@@ -12521,7 +12521,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7805252006469078502, guid: 1256767cf59bf4084903521518d4f868, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1553341269}
+      addedObject: {fileID: 1553341270}
   m_SourcePrefab: {fileID: 100100000, guid: 1256767cf59bf4084903521518d4f868, type: 3}
 --- !u!4 &1158756805 stripped
 Transform:
@@ -13151,7 +13151,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetBehaviour
---- !u!114 &1213788513
+--- !u!114 &1213788514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13938,10 +13938,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2460747735946583583, guid: 5fa0dc9826dd743778f9dc2e43908171, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2060100032}
+      addedObject: {fileID: 2060100034}
     - targetCorrespondingSourceObject: {fileID: 1721442661076498211, guid: 5fa0dc9826dd743778f9dc2e43908171, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1646905714}
+      addedObject: {fileID: 1646905716}
   m_SourcePrefab: {fileID: 100100000, guid: 5fa0dc9826dd743778f9dc2e43908171, type: 3}
 --- !u!1 &1308197655
 GameObject:
@@ -16622,7 +16622,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetBehaviour
---- !u!114 &1553341269
+--- !u!114 &1553341270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17052,7 +17052,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetBehaviour
---- !u!114 &1646905714
+--- !u!114 &1646905716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19186,7 +19186,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7805252006469078502, guid: 1256767cf59bf4084903521518d4f868, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 277937443}
+      addedObject: {fileID: 277937444}
   m_SourcePrefab: {fileID: 100100000, guid: 1256767cf59bf4084903521518d4f868, type: 3}
 --- !u!1 &1844041359
 GameObject:
@@ -21331,7 +21331,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetBehaviour
---- !u!114 &2060100032
+--- !u!114 &2060100034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

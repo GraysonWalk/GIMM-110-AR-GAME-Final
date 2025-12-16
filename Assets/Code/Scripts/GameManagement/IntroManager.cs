@@ -10,7 +10,7 @@ public class IntroManager : MonoBehaviour
     private void Start()
     {
         _videoPlayer = GetComponent<VideoPlayer>();
-        _videoPlayer.loopPointReached += OnVideoEnd; // Subscribe to the video end event
+        _videoPlayer.loopPointReached += OnVideoEnd;
     }
 
     private void OnVideoEnd(VideoPlayer vp)

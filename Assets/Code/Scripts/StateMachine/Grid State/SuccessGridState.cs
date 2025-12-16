@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
 
 public class SuccessGridState : IState
 {
     private readonly GridStateMachine machine;
     GameObject GameInstance;
-    GameObject manager;
+    GameManager manager;
+    
     public SuccessGridState(GridStateMachine machine)
     {
         this.machine = machine;
@@ -34,7 +36,7 @@ public class SuccessGridState : IState
 
     public void OnExit() 
     {
-        //manager.game1Complete = false;
+        manager.GridGameComplete = true;
         GameInstance.SetActive(false);
     }
 }

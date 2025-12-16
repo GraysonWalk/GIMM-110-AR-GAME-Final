@@ -6,6 +6,7 @@ public class BaseState : IState
     protected readonly Animator Animator;
     protected readonly GameManager GameManager;
 
+
     public BaseState(GameManager gameManager, Animator animator)
     {
         GameManager = gameManager;

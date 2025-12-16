@@ -90,7 +90,7 @@ public class StateMachine
     ///     Changes the current state to a new state, handling exit and enter calls.
     /// </summary>
     /// <param name="state">The state to transition to</param>
-    private void ChangeState(IState state)
+    internal void ChangeState(IState state)
     {
         if (state == _currentState.State) return; // If attempting to change to the same state, do nothing
 

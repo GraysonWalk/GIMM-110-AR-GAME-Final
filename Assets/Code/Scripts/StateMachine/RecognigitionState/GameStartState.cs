@@ -5,7 +5,7 @@
 // public class GameStartState : RecognitionBaseState
 // {
 //     private RecognitionGameManager gameManager;
-//     private GameObject _systems;
+//     private readonly GameObject _systems;
 //     private readonly List<ARTarget> _targets = new List<ARTarget>();
 //     private readonly List<ARTarget> _activatedTargets = new List<ARTarget>();
 //     public GameStartState(RecognitionGameManager gamemanager, GameObject  systems) 
@@ -38,4 +38,8 @@
 //             
 //     }
 // }
+
+/*
+ * MOVED TO INITIALIZE STATE
+ */
 

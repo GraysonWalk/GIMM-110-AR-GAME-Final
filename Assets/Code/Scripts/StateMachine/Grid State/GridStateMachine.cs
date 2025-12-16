@@ -14,7 +14,7 @@ public class GridStateMachine : MonoBehaviour
 
     [SerializeField] private GameObject GameInstance;
 
-    [SerializeField] private GameObject manager;
+    [SerializeField] public GameManager manager;
 
     [SerializeField] private Animator anim;
 
@@ -60,7 +60,7 @@ public class GridStateMachine : MonoBehaviour
     public ArrowPasswordInput GetUI() => PasswordUI;
     public ArrowPasswordInput GetUI2() => PasswordUI2;
     public GameObject GetGame() => GameInstance;
-    public GameObject GetManager() => manager;
+    public GameManager GetManager() => manager;
     public Animator GetAnim() => anim;
     public bool GetPassBool() => firstPass;
 

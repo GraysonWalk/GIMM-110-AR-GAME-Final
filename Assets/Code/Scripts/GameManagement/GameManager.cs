@@ -1,13 +1,20 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
+    public List<ARTarget> startingTargets = new();
+    public GameObject gridGamePrefab;
+    public GameObject recognitionGamePrefab;
     private Animator _animator;
-    private IState _endGameState;
-    private IState _gridGameState;
+    
+    public bool GridGameComplete { get; set; }
+    private BaseState _endGameState;
+    private BaseState _gridGameState;
 
-    private IState _initializeState;
-    private IState _recognitionGameState;
+    private BaseState _initializeState;
+    private BaseState _recognitionGameState;
 
     public StateMachine StateMachine { get; private set; }
 
@@ -17,11 +24,11 @@ public class GameManager : MonoBehaviour
         StateMachine = new StateMachine();
 
         // // Create States
-        // _initializeState = new InitializeState(this, _animator);
-        // _gridGameState = new GridGameState(this, _animator);
+        _initializeState = new InitializeState(this, _animator);
+        _gridGameState = new GridGameState(this, _animator);
         // _recognitionGameState = new RecognitionGameState(this, _animator);
         // _endGameState = new EndGameState(this, _animator);
-        //
+        
         // // Add Transitions
         // StateMachine.AddTransition(_initializeState, _gridGameState, () => _initializeState.IsCompleted);
         // StateMachine.AddTransition(_gridGameState, _recognitionGameState, () => _gridGameState.IsCompleted);
