@@ -12,6 +12,10 @@ public class SwapBehavior : MonoBehaviour
         {
             elem.SetActive(true);
         }
+        foreach (GameObject elem in Index2)
+        {
+            elem.SetActive(false);
+        }
     }
 
     public void Swap()

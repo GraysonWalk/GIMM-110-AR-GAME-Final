@@ -19,14 +19,7 @@ public class InteractGridState : IState
     {
         Debug.Log("Entered Interact State");
         firstPass = machine.GetPassBool();
-        if (firstPass)
-        {
-            passwordUI = machine.GetUI();
-            machine.firstPass = false;
-        } else
-        {
-            passwordUI = machine.GetUI2();
-        }
+        
 
             ArrowPassword pw = machine.GetNode().GetComponent<ArrowPassword>();
 
@@ -34,6 +27,16 @@ public class InteractGridState : IState
 
         if (pw != null)
         {
+            if (firstPass)
+            {
+                passwordUI = machine.GetUI();
+                machine.firstPass = false;
+            }
+            else
+            {
+                passwordUI = machine.GetUI2();
+            }
+
             Debug.Log("password started");
             passwordUI.StartSequence(pw, machine.GetNode());
 

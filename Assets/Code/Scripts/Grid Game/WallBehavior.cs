@@ -51,9 +51,9 @@ public class WallBehavior : MonoBehaviour
 
     public void RushMode()
     {
-        if (transform.position.x < (player.transform.position.x + initialDistance))
+        if (transform.position.x < (player.transform.position.x - initialDistance))
         {
-            transform.position = new Vector2(player.transform.position.x + initialDistance, 0);
+            transform.position = new Vector2(player.transform.position.x - initialDistance, 0);
         }
         varSpeed = boostSpeed;
     }
