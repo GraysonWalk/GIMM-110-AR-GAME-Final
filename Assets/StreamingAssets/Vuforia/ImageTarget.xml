@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="lang8" size="1.000000 2.486339" />
+    <ImageTarget name="lang4" size="1.000000 0.407563" />
+    <ImageTarget name="swap" size="1.000000 0.514642" />
+    <ImageTarget name="lang3" size="1.000000 0.398058" />
     <ImageTarget name="antimatter" size="1.000000 1.243349" />
     <ImageTarget name="fuse" size="1.000000 1.470455" />
     <ImageTarget name="systemsnormal" size="1.000000 1.166600" />

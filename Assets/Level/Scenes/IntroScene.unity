@@ -703,6 +703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IntroManager
   nextSceneName: Main
+  videoPlayer: {fileID: 199528848}
 --- !u!4 &2113381814
 Transform:
   m_ObjectHideFlags: 0
