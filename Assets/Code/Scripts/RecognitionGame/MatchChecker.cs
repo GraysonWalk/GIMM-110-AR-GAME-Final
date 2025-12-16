@@ -19,7 +19,7 @@ public class MatchChecker : MonoBehaviour
 
         // Match by the identifier stored in the ScriptableObject (targetId)
         var match = activeConfig.objectStates
-            .FirstOrDefault(s => s.targetId == target.name);
+            .FirstOrDefault(s => s.targetId == target.target);
 
         if (match == null)
         {
@@ -34,7 +34,9 @@ public class MatchChecker : MonoBehaviour
         {
             var allMatched = activeConfig.objectStates.All(s =>
             {
-                var found = GameObject.Find(s.targetId); // Find the target GameObject in the scene
+                // Find the target GameObject in the scene
+                var found = FindObjectsByType<ARTarget>(FindObjectsSortMode.None)
+                    .FirstOrDefault(t => t.target == s.targetId);
                 var targetComp = found != null ? found.GetComponent<ARTarget>() : null; // Get its ARTarget component
                 return targetComp != null && s.Matches(targetComp); // Check if it matches the expected state
             });
@@ -42,7 +44,6 @@ public class MatchChecker : MonoBehaviour
             if (allMatched) return true;
         }
 
-        Debug.LogError($"Target '{target.name}' does not match expected states!");
         return false;
     }
 }

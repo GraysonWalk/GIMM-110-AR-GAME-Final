@@ -22,7 +22,7 @@ public class GameConfiguration : ScriptableObject
     public class ObjectState
     {
         // Assign a target identifier here (e.g. the AR target's GameObject name or a custom id)
-        public string targetId;
+        public ARTargetList targetId;
         public bool requireActive = true;
 
         /// <summary>
@@ -40,14 +40,11 @@ public class GameConfiguration : ScriptableObject
 
             if (requireActive && !targetComponent.IsActive)
             {
-                Debug.LogError($"{nameof(targetComponent)} is not active");
                 return false;
             }
 
-            if (!string.IsNullOrEmpty(targetId))
-                return string.Equals(targetComponent.name, targetId, StringComparison.Ordinal);
-
-            return true;
+            if (targetId == ARTargetList.None) return false;
+            return targetComponent.target == targetId;
         }
     }
 }
