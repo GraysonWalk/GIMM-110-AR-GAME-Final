@@ -63,14 +63,6 @@ public class RecognitionGameManager : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        foreach (var target in systemsHolder.GetComponentsInChildren<ARTarget>())
-            target.OnActivated -= HandleTargetFound;
-
-        if (passwordInput != null) passwordInput.OnCorrect -= OnCorrectPassword;
-    }
-
     private void HandleTargetFound(ARTarget target)
     {
         var puzzleSolved = matchChecker.CheckMatches(_activeConfig, target);
