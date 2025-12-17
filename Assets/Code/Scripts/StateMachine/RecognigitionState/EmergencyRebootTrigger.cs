@@ -10,7 +10,7 @@ public class EmergencyRebootTrigger : MonoBehaviour
     [SerializeField] private bool singleUse = true;
 
     private ObserverBehaviour observer;
-    private bool used = false;
+    private bool used;
 
     private void Awake()
     {
@@ -33,11 +33,7 @@ public class EmergencyRebootTrigger : MonoBehaviour
 
         if (status.Status == Status.TRACKED ||
             status.Status == Status.EXTENDED_TRACKED)
-        {
-            timerBar.RestoreToFull();
+            // timerBar.RestoreToFull();
             used = true;
-        }
     }
 }
-
-

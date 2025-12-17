@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: TestConfiguration
   m_EditorClassIdentifier: Assembly-CSharp::GameConfiguration
   configurationName: 001
-  videoClip: {fileID: 32900000, guid: f41ce81cf24f648ccabfcc98ed2e7878, type: 3}
-  password: dingDang
+  videoClip: {fileID: 32900000, guid: 962e5b31e63f84697bb7fcf847762f24, type: 3}
+  password: CICERO
   objectStates:
-  - targetId: 1
-    requireActive: 1
-  - targetId: 3
+  - targetId: 2
     requireActive: 1
   - targetId: 5
     requireActive: 1

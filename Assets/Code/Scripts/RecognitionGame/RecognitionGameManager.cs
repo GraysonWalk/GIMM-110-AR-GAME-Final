@@ -15,6 +15,7 @@ public class RecognitionGameManager : MonoBehaviour
 
     [SerializeField] private MatchChecker matchChecker;
     [SerializeField] private GameObject systemsHolder;
+    [SerializeField] public GameManager gameManager;
 
     [SerializeField]
     private PasswordInputBase passwordInput; // Optional password input component for password-based games
@@ -80,6 +81,6 @@ public class RecognitionGameManager : MonoBehaviour
     /// </summary>
     private void OnPuzzleSolved()
     {
-        Debug.Log("Puzzle solved!");
+        gameManager.RecognitionGameComplete = true;
     }
 }

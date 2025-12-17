@@ -13,7 +13,7 @@ public class BaseState : IState
         Animator = animator;
     }
 
-    public bool IsCompleted { get; protected set; }
+    public bool IsCompleted { get; set; }
 
     public virtual void OnEnter()
     {
