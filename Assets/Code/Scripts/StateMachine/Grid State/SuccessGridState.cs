@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class SuccessGridState : IState
 {
+    private readonly GameObject GameInstance;
     private readonly GridStateMachine machine;
     private readonly GameManager manager;
-    private readonly GameObject GameInstance;
 
     public SuccessGridState(GridStateMachine machine)
     {
@@ -35,8 +35,13 @@ public class SuccessGridState : IState
     public void OnExit()
     {
         Debug.Log("Exited Success State");
-        Debug.Log(manager);
-        manager.OnGridGameComplete();
-        GameInstance.SetActive(false);
+        if (manager != null)
+            manager.OnGridGameComplete();
+        else
+            Debug.LogWarning(
+                "SuccessGridState: manager is null — cannot call OnGridGameComplete(). Ensure GridStateMachine.manager is assigned.");
+
+        if (GameInstance != null)
+            GameInstance.SetActive(false);
     }
 }

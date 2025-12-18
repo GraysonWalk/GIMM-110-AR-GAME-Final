@@ -3,36 +3,33 @@ using UnityEngine;
 public class RecognitionGameState : BaseState
 {
     private readonly GameManager _gameManager;
-    private GameObject _newRecognitionGame;
-    private RecognitionGameManager _recognitionGameManager;
+    private readonly GameObject _recognitionGame;
+    private readonly RecognitionGameManager _recognitionGameManager;
 
-    public RecognitionGameState(GameManager gameManager, Animator animator) : base(gameManager, animator)
+    public RecognitionGameState(GameManager gameManager, Animator animator, GameObject recognitionGame) : base(
+        gameManager, animator)
     {
         _gameManager = gameManager;
-        _newRecognitionGame = gameManager.recognitionGamePrefab;
+        _recognitionGame = recognitionGame;
+        _recognitionGameManager = _recognitionGame.GetComponent<RecognitionGameManager>();
     }
 
     public override void Update()
     {
         base.Update();
         // Check if the recognition game is complete
-        if (_gameManager.RecognitionGameComplete)
-        {
-            // IsCompleted = true;
-            // _gameManager.StateMachine.ChangeState(EndGameState);
-        }
+        // if (_gameManager.RecognitionGameComplete) IsCompleted = true;
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
-        _newRecognitionGame = Object.Instantiate(_gameManager.recognitionGamePrefab);
-        _recognitionGameManager.gameManager = _gameManager;
+        _recognitionGame.SetActive(true);
     }
 
     public override void OnExit()
     {
         base.OnExit();
-        _newRecognitionGame.gameObject.SetActive(false);
+        if (!_gameManager.gridGameFirst) _recognitionGame.SetActive(false);
     }
 }

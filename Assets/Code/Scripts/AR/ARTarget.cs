@@ -8,6 +8,10 @@ public class ARTarget : DefaultObserverEventHandler
 
     public ARTargetList target;
 
+    [SerializeField] private ARTargetDefinition definition;
+    public ARTargetDefinition Definition => definition;
+    public string DefinitionId => definition?.Id;
+
     public bool IsActive
     {
         get => isActive;
@@ -16,12 +20,12 @@ public class ARTarget : DefaultObserverEventHandler
 
     public void Awake()
     {
-        if (target == ARTargetList.None) Debug.LogWarning($"ARTarget on {gameObject.name} has no target assigned.");
+        if (definition == null && target == ARTargetList.None)
+            Debug.LogWarning($"ARTarget on {gameObject.name} has no definition or enum target assigned.");
     }
 
     public event Action<ARTarget> OnActivated;
 
-    // Use this to change state. If notify is false, the event won't fire.
     public void SetActive(bool value, bool notify = true)
     {
         if (isActive == value) return;

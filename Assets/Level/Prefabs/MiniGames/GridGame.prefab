@@ -1173,6 +1173,7 @@ GameObject:
   - component: {fileID: 4387213042856532709}
   - component: {fileID: 1776233947775996006}
   - component: {fileID: 9223305123524887948}
+  - component: {fileID: 5509194332211359232}
   m_Layer: 5
   m_Name: MainScreen
   m_TagString: Untagged
@@ -1240,6 +1241,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5509194332211359232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216734549957180427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Mask
+  m_ShowMaskGraphic: 1
 --- !u!1 &1222807179722746903
 GameObject:
   m_ObjectHideFlags: 0
@@ -5084,6 +5098,7 @@ GameObject:
   - component: {fileID: 2157827536454853943}
   - component: {fileID: 5324065150145901593}
   - component: {fileID: 5701820276306223258}
+  - component: {fileID: 2564131970360253924}
   m_Layer: 5
   m_Name: LowerRightPanel
   m_TagString: Untagged
@@ -5150,6 +5165,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2564131970360253924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6040953335583627249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Mask
+  m_ShowMaskGraphic: 1
 --- !u!1 &6101443280663352167
 GameObject:
   m_ObjectHideFlags: 0
@@ -5406,6 +5434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 102942635912891822}
+  - component: {fileID: 5501596610362691476}
   m_Layer: 5
   m_Name: UpperRightPanel
   m_TagString: Untagged
@@ -5433,6 +5462,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5501596610362691476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6413165430865808375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Mask
+  m_ShowMaskGraphic: 1
 --- !u!1 &6471213828802050136
 GameObject:
   m_ObjectHideFlags: 0
@@ -15774,6 +15816,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 102942635912891822}
     m_Modifications:
+    - target: {fileID: 3270002597019344, guid: 71613fecd3595426fb5ef05b08848f3d, type: 3}
+      propertyPath: m_AspectMode
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3733916146584947404, guid: 71613fecd3595426fb5ef05b08848f3d, type: 3}
       propertyPath: m_Name
       value: ARCameraScreen
@@ -15788,11 +15834,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8141707981460753995, guid: 71613fecd3595426fb5ef05b08848f3d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8141707981460753995, guid: 71613fecd3595426fb5ef05b08848f3d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8141707981460753995, guid: 71613fecd3595426fb5ef05b08848f3d, type: 3}
       propertyPath: m_AnchorMin.x

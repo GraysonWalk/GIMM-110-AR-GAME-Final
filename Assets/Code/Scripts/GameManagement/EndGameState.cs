@@ -2,13 +2,16 @@ using UnityEngine;
 
 public class EndGameState : BaseState
 {
+    private readonly GameObject _failureMessage;
     private readonly GameManager _gameManager;
-    private GameObject _failureMessage;
-    private GameObject _successMessage;
+    private readonly GameObject _successMessage;
 
-    public EndGameState(GameManager gameManager, Animator animator) : base(gameManager, animator)
+    public EndGameState(GameManager gameManager, Animator animator, GameObject failureMessage,
+        GameObject successMessage) : base(gameManager, animator)
     {
         _gameManager = gameManager;
+        _failureMessage = failureMessage;
+        _successMessage = successMessage;
     }
 
     public override void OnEnter()

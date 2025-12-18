@@ -20,12 +20,20 @@ public class RecognitionGameManager : MonoBehaviour
     [SerializeField]
     private PasswordInputBase passwordInput; // Optional password input component for password-based games
 
+    public ConsoleLight consoleLight;
+
 
     private GameConfiguration _activeConfig; // Currently active game configuration
+    private bool _correctPassword;
+    private bool _puzzleSolved;
 
     private void Awake()
     {
-        foreach (var target in systemsHolder.GetComponentsInChildren<ARTarget>())
+        var targets = systemsHolder != null
+            ? systemsHolder.GetComponentsInChildren<ARTarget>(true)
+            : FindObjectsOfType<ARTarget>(true);
+
+        foreach (var target in targets)
             target.OnActivated += HandleTargetFound;
     }
 
@@ -66,21 +74,41 @@ public class RecognitionGameManager : MonoBehaviour
 
     private void HandleTargetFound(ARTarget target)
     {
-        var puzzleSolved = matchChecker.CheckMatches(_activeConfig, target);
+        if (_puzzleSolved) return;
 
-        if (puzzleSolved) OnPuzzleSolved();
+        var solved = matchChecker.CheckMatches(_activeConfig, target, systemsHolder);
+        if (!solved) return;
+
+        _puzzleSolved = true;
+
+        // Unsubscribe to prevent further state changes from affecting the solved state
+        var targets = systemsHolder != null
+            ? systemsHolder.GetComponentsInChildren<ARTarget>(true)
+            : FindObjectsOfType<ARTarget>(true);
+
+        foreach (var t in targets)
+            t.OnActivated -= HandleTargetFound;
+
+        OnAllTargetsFound();
+    }
+
+    private void OnAllTargetsFound()
+    {
+        _puzzleSolved = true;
+        OnPuzzleSolved();
     }
 
     private void OnCorrectPassword()
     {
-        Debug.Log("Correct password entered!");
+        _correctPassword = true;
+        OnPuzzleSolved();
     }
 
-    /// <summary>
-    ///     Currently a placeholder for further actions to take when the puzzle is solved.
-    /// </summary>
     private void OnPuzzleSolved()
     {
-        gameManager.RecognitionGameComplete = true;
+        if (!_puzzleSolved ||
+            (_activeConfig.password != null && _activeConfig.password != "" && !_correctPassword)) return;
+        Debug.Log("RecognitionGameManager: Puzzle solved!");
+        if (gameManager != null) gameManager.OnRecognitionGameComplete();
     }
 }

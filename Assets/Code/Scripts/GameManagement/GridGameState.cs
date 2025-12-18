@@ -3,25 +3,25 @@ using UnityEngine;
 public class GridGameState : BaseState
 {
     private readonly GameManager _gameManager;
-    private GameObject _newGridGame;
-    private GridStateMachine gridStateMachine;
+    private readonly GameObject _gridGame;
+    private readonly GridStateMachine _gridStateMachine;
 
-    public GridGameState(GameManager gameManager, Animator animator) : base(gameManager, animator)
+    public GridGameState(GameManager gameManager, Animator animator, GameObject gridGame,
+        GridStateMachine gridStateMachine) : base(gameManager, animator)
     {
         _gameManager = gameManager;
-        _newGridGame = gameManager.gridGamePrefab;
+        _gridGame = gridGame;
+        _gridStateMachine = gridStateMachine;
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
-        _newGridGame = Object.Instantiate(_gameManager.gridGamePrefab);
-        gridStateMachine = _newGridGame.GetComponentInChildren<GridStateMachine>();
-        gridStateMachine.manager = _gameManager;
+        _gridGame.SetActive(true);
     }
 
     public override void OnExit()
     {
-        gridStateMachine.GetGame().SetActive(false);
+        base.OnExit();
     }
 }

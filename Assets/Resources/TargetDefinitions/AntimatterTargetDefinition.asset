@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9120873d0803412a8188b694eac9e490, type: 3}
+  m_Name: AntimatterTargetDefinition
+  m_EditorClassIdentifier: Assembly-CSharp::ARTargetDefinition
+  id: 0a3226ec-e52b-48ef-a5d8-8df1ea387316
+  displayName: Antimatter
